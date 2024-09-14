@@ -1,0 +1,134 @@
+/* Import the Quicksand font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+:root {
+  --color-lapis-lazuli: #22577a;
+  --color-verdigris: #38a3a5;
+  --color-emerald: #57cc99;
+  --color-light-green: #80ed99;
+  --color-tea-green: #c7f9cc;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: var(--color-tea-green);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  perspective: 60rem;
+  perspective-origin: 50% 50%;
+  overflow: hidden;
+}
+
+.text {
+  user-select: none;
+}
+
+.text > div {
+  display: inline-block;
+  position: relative;
+  font-size: 48vmin;
+  color: transparent;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  animation: float 4s infinite;
+}
+
+.text > div:nth-child(1) {
+  animation-delay: -1.5s;
+}
+
+.text > div:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.text > div:nth-child(3) {
+  animation-delay: -0.5s;
+}
+
+.text > div:nth-child(4) {
+  animation-delay: 0s;
+}
+
+.text > div > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  text-shadow: 0 0 1px white;
+}
+
+.letter-A > div:not(:nth-child(n+3)),
+.letter-A > div:not(:nth-last-child(n+3)) {
+  color: var(--color-lapis-lazuli);
+  text-shadow: 0 0 1px var(--color-lapis-lazuli);
+}
+
+.letter-L > div:not(:nth-child(n+3)),
+.letter-L > div:not(:nth-last-child(n+3)) {
+  color: var(--color-verdigris);
+  text-shadow: 0 0 1px var(--color-verdigris);
+}
+
+.letter-E > div:not(:nth-child(n+3)),
+.letter-E > div:not(:nth-last-child(n+3)) {
+  color: var(--color-emerald);
+  text-shadow: 0 0 1px var(--color-emerald);
+}
+
+.letter-X > div:not(:nth-child(n+3)),
+.letter-X > div:not(:nth-last-child(n+3)) {
+  color: var(--color-light-green);
+  text-shadow: 0 0 1px var(--color-light-green);
+}
+
+.text > div > div:nth-child(1) {
+  transform: translateZ(-3.84vmin);
+}
+
+.text > div > div:nth-child(2) {
+  transform: translateZ(-2.88vmin);
+}
+
+.text > div > div:nth-child(3) {
+  transform: translateZ(-1.92vmin);
+}
+
+.text > div > div:nth-child(4) {
+  transform: translateZ(-0.96vmin);
+}
+
+.text > div > div:nth-child(5) {
+  transform: translateZ(0vmin);
+}
+
+.text > div > div:nth-child(6) {
+  transform: translateZ(0.96vmin);
+}
+
+.text > div > div:nth-child(7) {
+  transform: translateZ(1.92vmin);
+}
+
+.text > div > div:nth-child(8) {
+  transform: translateZ(2.88vmin);
+}
+
+.text > div > div:nth-child(9) {
+  transform: translateZ(3.84vmin);
+}
+
+.text > div > div:nth-child(10) {
+  transform: translateZ(4.8vmin);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: rotate3d(0, 1, 0, 30deg);
+  }
+  50% {
+    transform: rotate3d(0, -1, 0, 30deg);
+  }
+}
